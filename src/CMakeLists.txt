@@ -116,6 +116,7 @@ set (mraa_LIB_ARM_SRCS_NOAUTO
   ${PROJECT_SOURCE_DIR}/src/arm/radxa_rock3a.c
   ${PROJECT_SOURCE_DIR}/src/arm/radxa_rock3c.c
   ${PROJECT_SOURCE_DIR}/src/arm/radxa_cm3_io.c
+  ${PROJECT_SOURCE_DIR}/src/arm/radxa_cm3_sodimm_io.c
 )
 
 set (mraa_LIB_MIPS_SRCS_NOAUTO

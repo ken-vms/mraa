@@ -18,6 +18,7 @@
 #include "arm/radxa_zero.h"
 #include "arm/radxa_rock3a.h"
 #include "arm/radxa_rock3c.h"
+#include "arm/radxa_cm3_sodimm_io.h"
 #include "arm/de_nano_soc.h"
 #include "arm/banana.h"
 #include "arm/beaglebone.h"
@@ -122,6 +123,8 @@ mraa_arm_platform()
             platform_type = MRAA_RADXA_ROCK_3_MODEL_C;
         else if (mraa_file_contains("/proc/device-tree/model", "Radxa CM3 IO"))
             platform_type = MRAA_RADXA_CM3_IO;
+        else if (mraa_file_contains("/proc/device-tree/model", "Radxa CM3 SODIMM IO"))
+            platform_type = MRAA_RADXA_CM3_SODIMM_IO;
         else if (mraa_file_contains("/proc/device-tree/compatible", "raspberrypi,"))
             platform_type = MRAA_RASPBERRY_PI;
         else if (mraa_file_contains("/proc/device-tree/model", "ADLINK ARM, LEC-PX30"))
@@ -170,6 +173,9 @@ mraa_arm_platform()
             break;
         case MRAA_RADXA_CM3_IO:
             plat = mraa_radxa_cm3_io();
+            break;
+        case MRAA_RADXA_CM3_SODIMM_IO:
+            plat = mraa_radxa_cm3_sodimm_io();
             break;
         case MRAA_DE_NANO_SOC:
             plat = mraa_de_nano_soc();
